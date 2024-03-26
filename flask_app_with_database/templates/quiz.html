@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Computer Science Quiz</title>
+</head>
+<body>
+    <h1>Test Your Computer Science Knowledge!</h1>
+
+    <form action="/quiz" method="post">  <ol>
+            {% for question in questions %}
+            <li>
+                <p>{{ question.question_text }}</p>
+                <input type="text" name="answer" placeholder="Enter your answer">  </li>
+            {% endfor %}
+        </ol>
+        <button type="submit">Submit Answers</button>
+    </form>
+</body>
+</html>

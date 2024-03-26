@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Results</title>
+</head>
+<body>
+    <h1>Your Score: {{ score }}</h1>
+
+    <h2>Questions and Answers:</h2>
+    <ul>
+        {% for question, answer in questions_answers %}
+        <li>
+            <p>{{ question.question_text }}</p>
+            <p>Your Answer: {{ answer }}</p>
+            {% if answer == question.correct_answer %}
+            <p class="correct">Correct!</p>
+            {% else %}
+            <p class="incorrect">Incorrect. The correct answer is {{ question.correct_answer }}.</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
